@@ -6,8 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="sigie-backend" />
+        <module name="SIGIE-BACKEND" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SIGIE-BACKEND" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SIGIE-BACKEND" options="-parameters" />
+    </option>
   </component>
 </project>
