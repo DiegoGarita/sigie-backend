@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SIGIE.iml" filepath="$PROJECT_DIR$/SIGIE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SIGIE-BACKEND.iml" filepath="$PROJECT_DIR$/.idea/SIGIE-BACKEND.iml" />
     </modules>
   </component>
 </project>
