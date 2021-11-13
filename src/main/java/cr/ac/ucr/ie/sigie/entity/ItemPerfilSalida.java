@@ -11,7 +11,7 @@ public class ItemPerfilSalida {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTipoPerfilSalida;
 
-    @Column(name = "descripcion", unique = false, length = 200, nullable = false)
+    @Column(name = "descripcion", unique = false, length = 512, nullable = false)
     private String descripcion;
 
     @ManyToOne(fetch = FetchType.LAZY)
