@@ -10,21 +10,21 @@ public class Contenido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idContenido;
-    //-------------------------------------------------------------------------
+
     @Column(name = "tema", unique = false, length = 256, nullable = false)
     private String tema;
-    //-------------------------------------------------------------------------
+
     @Column(name = "ordenContenido", unique = false, nullable = false)
     private int ordenContenido;
-    //-------------------------------------------------------------------------
+
     @OneToMany(cascade = CascadeType.ALL,
             mappedBy = "contenido", orphanRemoval = true)
     private List<SubContenido> subContenidos;
-    //-------------------------------------------------------------------------
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idCurso")
     private Curso curso;
-    //-------------------------------------------------------------------------
+
 
 
     public Contenido() {
