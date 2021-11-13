@@ -11,8 +11,12 @@ public class AreaDisciplinaria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idAreaDisciplinaria;
+
+    @Column(name = "nombreDisciplinaria", unique = false, length = 256, nullable = false)
     private String nombreDisciplinaria;
-    @OneToMany
+
+    @OneToMany(cascade = CascadeType.ALL,
+            mappedBy = "areaDisciplinaria", orphanRemoval = true)
     private List<Curso> cursos;
 
     public AreaDisciplinaria() {
