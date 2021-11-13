@@ -11,7 +11,7 @@ public class Modalidad {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idModalidad;
 
-    @Column(name = "tipoModalidad", unique = false, length = 75, nullable = false)
+    @Column(name = "tipoModalidad", unique = false, length = 128, nullable = false)
     private String tipoModalidad;
 
     @OneToMany(cascade = CascadeType.ALL,
