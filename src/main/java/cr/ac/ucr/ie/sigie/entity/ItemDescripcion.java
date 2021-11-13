@@ -12,7 +12,7 @@ public class ItemDescripcion {
     @Column(name="ordenDescripcion", unique = false, nullable = false)
     private int ordenDescripcion;
 
-    @Column(name = "detalleDescripcion", unique = false, length = 70, nullable = false)
+    @Column(name = "detalleDescripcion", unique = false, length = 512, nullable = false)
     private String detalleDescripcion;
 
     @ManyToOne(fetch = FetchType.LAZY)
