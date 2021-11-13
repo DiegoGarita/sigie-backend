@@ -10,6 +10,7 @@ public class ReferenciaBibliografica {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idBibliografia;
+    @Column(name="referencia", unique = false,length = 512, nullable = false)
     private String referencia;
 
     public ReferenciaBibliografica() {
