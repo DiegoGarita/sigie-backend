@@ -15,7 +15,7 @@ public class Modalidad {
     private String tipoModalidad;
 
     @OneToMany(cascade = CascadeType.ALL,
-               mappedBy = "modalidad", orphanRemoval = true)
+            mappedBy = "modalidad", orphanRemoval = true)
     private List<Curso> cursos;
 
     public Modalidad() {

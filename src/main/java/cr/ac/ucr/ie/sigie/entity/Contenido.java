@@ -26,7 +26,6 @@ public class Contenido {
     private Curso curso;
 
 
-
     public Contenido() {
         subContenidos = new ArrayList<>();
         curso = new Curso();

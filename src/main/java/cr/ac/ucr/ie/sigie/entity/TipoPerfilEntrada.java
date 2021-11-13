@@ -10,7 +10,7 @@ public class TipoPerfilEntrada {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTipo;
-    @Column(name="nombreTipo", unique = false,length = 256, nullable = false)
+    @Column(name = "nombreTipo", unique = false, length = 256, nullable = false)
     private String nombreTipo;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idTipoPerfilEntrada")

@@ -10,11 +10,11 @@ public class UnidadAcademica {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUnidadAcademica;
-    @Column(name="nombreUnidadAcademica", unique = false,length = 256, nullable = false)
+    @Column(name = "nombreUnidadAcademica", unique = false, length = 256, nullable = false)
     private String nombreUnidadAcademica;
-    @ManyToMany(fetch=FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     private List<Curso> cursosPropios;
-    @ManyToMany(fetch=FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     private List<PlanEstudio> planesEstudio;
 
     public UnidadAcademica() {

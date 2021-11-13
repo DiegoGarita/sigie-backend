@@ -10,15 +10,15 @@ public class PlanEstudio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPlanEstudio;
-    @Column(name="anoAprobacion", unique = false,nullable = false)
+    @Column(name = "anoAprobacion", unique = false, nullable = false)
     private int anoAprobacion;
-    @Column(name="cantidadCiclos", unique = false,nullable = false)
+    @Column(name = "cantidadCiclos", unique = false, nullable = false)
     private int cantidadCiclos;
-    @Column(name="codigoCarrera", unique = false,nullable = false)
+    @Column(name = "codigoCarrera", unique = false, nullable = false)
     private int codigoCarrera;
-    @Column(name="duracionAnos", unique = false,nullable = false)
+    @Column(name = "duracionAnos", unique = false, nullable = false)
     private int duracionAnos;
-    @Column(name="nombreCarrera", unique = false,length = 256, nullable = false)
+    @Column(name = "nombreCarrera", unique = false, length = 256, nullable = false)
     private String nombreCarrera;
     @OneToMany(cascade = CascadeType.ALL,
             mappedBy = "planEstudio", orphanRemoval = true)
@@ -26,7 +26,7 @@ public class PlanEstudio {
     @OneToMany(cascade = CascadeType.ALL,
             mappedBy = "planEstudio", orphanRemoval = true)
     private List<Enfasis> enfasis;
-    @ManyToMany(fetch=FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<UnidadAcademica> unidadesAcademicasPropietarias;
     @OneToMany(cascade = CascadeType.ALL,
             mappedBy = "planEstudio", orphanRemoval = true)
