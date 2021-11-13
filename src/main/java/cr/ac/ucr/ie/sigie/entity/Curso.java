@@ -11,40 +11,81 @@ public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCurso;
+    //-------------------------------------------------------------------------
+    @Column(name = "sigla", unique = true, length = 10, nullable = false)
     private String sigla;
+    //-------------------------------------------------------------------------
+    @Column(name = "nombre", unique = false, length = 256, nullable = false)
     private String nombre;
+    //-------------------------------------------------------------------------
+    @Column(name = "creditos", unique = false, nullable = false)
     private int creditos;
+    //-------------------------------------------------------------------------
+    @Column(name = "ciclo", unique = false, length = 256, nullable = false)
     private String ciclo;
+    //-------------------------------------------------------------------------
+    @Column(columnDefinition = "boolean default false")
     private boolean electivo;
+    //-------------------------------------------------------------------------
+    @Column(name = "horasTeoria", unique = false, nullable = false)
     private int horasTeoria;
+    //-------------------------------------------------------------------------
+    @Column(name = "horasPractica", unique = false, nullable = false)
     private int horasPractica;
+    //-------------------------------------------------------------------------
+    @Column(name = "horasLaboratorio", unique = false, nullable = false)
     private int horasLaboratorio;
+    //-------------------------------------------------------------------------
+    @Column(name = "horasTeoricoPractica", unique = false, nullable = false)
     private int horasTeoricoPractica;
+    //-------------------------------------------------------------------------
+    @Column(name = "objetivoGeneral", unique = false, length = 512, nullable = false)
     private String objetivoGeneral;
-    @OneToMany
+    //-------------------------------------------------------------------------
+    @OneToMany(cascade = CascadeType.ALL,
+            mappedBy = "curso", orphanRemoval = true)
     private List<Curso> electivos;
-    @ManyToMany
+    //-------------------------------------------------------------------------
+    @ManyToMany(fetch=FetchType.EAGER)
     private List<Curso> requisitos;
-    @ManyToMany
+    //-------------------------------------------------------------------------
+    @ManyToMany(fetch=FetchType.EAGER)
     private List<Curso> correquisitos;
-    @OneToMany
+    //-------------------------------------------------------------------------
+    @OneToMany(cascade = CascadeType.ALL,
+            mappedBy = "curso", orphanRemoval = true)
     private List<Contenido> contenidos;
-    @OneToMany
+    //-------------------------------------------------------------------------
+    @OneToMany(cascade = CascadeType.ALL,
+            mappedBy = "curso", orphanRemoval = true)
     private List<ItemDescripcion> itemesDescripcion;
-    @OneToMany
+    //-------------------------------------------------------------------------
+    @OneToMany(cascade = CascadeType.ALL,
+            mappedBy = "curso", orphanRemoval = true)
     private List<ReferenciaBibliografica> referenciasBibliograficas;
-    @OneToMany
+    //-------------------------------------------------------------------------
+    @OneToMany(cascade = CascadeType.ALL,
+            mappedBy = "curso", orphanRemoval = true)
     private List<ResultadosAprendizaje> resultadosDeAprendizaje;
-    @ManyToOne
+    //-------------------------------------------------------------------------
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idModalidad")
     private Modalidad modalidad;
-    @ManyToOne
+    //-------------------------------------------------------------------------
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idAreaDisciplinaria")
     private AreaDisciplinaria areaDisciplinaria;
-    @ManyToMany
+    //-------------------------------------------------------------------------
+    @ManyToMany(fetch=FetchType.EAGER)
     private List<Enfasis> enfasis;
-    @ManyToOne
+    //-------------------------------------------------------------------------
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idPlanEstudio")
     private PlanEstudio planEstudio;
-    @ManyToMany
+    //-------------------------------------------------------------------------
+    @ManyToMany(fetch=FetchType.EAGER)
     private List<UnidadAcademica> unidadesAcademicasPropietarias;
+    //-------------------------------------------------------------------------
 
     public Curso() {
         electivos = new ArrayList<>();
