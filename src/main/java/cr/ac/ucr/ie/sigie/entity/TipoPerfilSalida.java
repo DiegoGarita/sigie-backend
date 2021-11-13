@@ -10,8 +10,10 @@ public class TipoPerfilSalida {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTipo;
+    @Column(name="nombreTipo", unique = false,length = 256, nullable = false)
     private String nombreTipo;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL,
+            mappedBy = "tipoPerfilSalida", orphanRemoval = true)
     private List<ItemPerfilSalida> itemesPerfilSalida;
 
     public TipoPerfilSalida() {
