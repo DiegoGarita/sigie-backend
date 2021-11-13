@@ -16,7 +16,7 @@ public class AreaDisciplinaria {
     private String nombreDisciplinaria;
 
     @OneToMany(cascade = CascadeType.ALL,
-            mappedBy = "areadisciplinaria", orphanRemoval = true)
+            mappedBy = "areaDisciplinaria", orphanRemoval = true)
     private List<Curso> cursos;
 
     public AreaDisciplinaria() {
