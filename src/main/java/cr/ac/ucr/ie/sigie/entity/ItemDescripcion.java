@@ -1,9 +1,16 @@
 package cr.ac.ucr.ie.sigie.entity;
+import javax.persistence.*;
 
+
+@Entity
 public class ItemDescripcion {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDescripcion;
     private int ordenDescripcion;
     private String detalleDescripcion;
+    @ManyToOne
     private Curso curso;
 
     public ItemDescripcion() {

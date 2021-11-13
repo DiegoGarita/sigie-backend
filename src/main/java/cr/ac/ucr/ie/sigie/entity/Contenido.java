@@ -2,12 +2,19 @@ package cr.ac.ucr.ie.sigie.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 
+
+@Entity
 public class Contenido {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idContenido;
     private String tema;
     private int ordenContenido;
+    @OneToMany
     private List<SubContenido> subContenidos;
+    @ManyToOne
     private Curso curso;
 
     public Contenido() {

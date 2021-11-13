@@ -2,19 +2,30 @@ package cr.ac.ucr.ie.sigie.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 
+
+@Entity
 public class PlanEstudio {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPlanEstudio;
     private int anoAprobacion;
     private int cantidadCiclos;
     private int codigoCarrera;
     private int duracionAnos;
     private String nombreCarrera;
+    @OneToMany
     private List<Curso> cursos;
+    @OneToMany
     private List<Enfasis> enfasis;
+    @ManyToMany
     private List<UnidadAcademica> unidadesAcademicasPropietarias;
+    @OneToMany
     private List<ItemPerfilEntrada> itemesPerfilEntrada;
+    @OneToMany
     private List<ItemPerfilSalida> itemesPerfilSalida;
+    @ManyToOne
     private Grado grado;
 
     public PlanEstudio() {

@@ -2,10 +2,16 @@ package cr.ac.ucr.ie.sigie.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 
+
+@Entity
 public class TipoPerfilSalida {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTipo;
     private String nombreTipo;
+    @OneToMany
     private List<ItemPerfilSalida> itemesPerfilSalida;
 
     public TipoPerfilSalida() {
