@@ -1,9 +1,19 @@
 package cr.ac.ucr.ie.sigie.entity;
 
+
+import javax.persistence.*;
+
+
+@Entity
 public class ItemPerfilSalida {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTipoPerfilSalida;
     private String descripcion;
+    @ManyToOne
     private PlanEstudio planEstudio;
+    @ManyToOne
     private TipoPerfilSalida tipoPerfilSalida;
 
     public ItemPerfilSalida() {

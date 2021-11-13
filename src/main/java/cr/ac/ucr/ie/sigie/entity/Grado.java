@@ -2,12 +2,18 @@ package cr.ac.ucr.ie.sigie.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 
+
+@Entity
 public class Grado {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idGrado;
     private String nombre;
     private int totalCreditosMaximo;
     private int totalCreditosMinimo;
+    @OneToMany
     private List<PlanEstudio> planesEstudio;
 
     public Grado() {

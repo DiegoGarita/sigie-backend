@@ -3,9 +3,16 @@ package cr.ac.ucr.ie.sigie.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.*;
+
+
+@Entity
 public class AreaDisciplinaria {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idAreaDisciplinaria;
     private String nombreDisciplinaria;
+    @OneToMany
     private List<Curso> cursos;
 
     public AreaDisciplinaria() {

@@ -2,11 +2,18 @@ package cr.ac.ucr.ie.sigie.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 
+
+@Entity
 public class Enfasis {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idEnfasis;
     private String descripcion;
+    @ManyToMany
     private List<Curso> cursos;
+    @ManyToOne
     private PlanEstudio planEstudio;
 
     public Enfasis() {

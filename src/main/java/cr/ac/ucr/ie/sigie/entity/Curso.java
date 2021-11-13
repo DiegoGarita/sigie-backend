@@ -3,6 +3,8 @@ package cr.ac.ucr.ie.sigie.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
+
 
 @Entity
 public class Curso {
@@ -19,26 +21,29 @@ public class Curso {
     private int horasLaboratorio;
     private int horasTeoricoPractica;
     private String objetivoGeneral;
+    @OneToMany
     private List<Curso> electivos;
+    @ManyToMany
     private List<Curso> requisitos;
+    @ManyToMany
     private List<Curso> correquisitos;
-
+    @OneToMany
     private List<Contenido> contenidos;
-
+    @OneToMany
     private List<ItemDescripcion> itemesDescripcion;
-
+    @OneToMany
     private List<ReferenciaBibliografica> referenciasBibliograficas;
-
+    @OneToMany
     private List<ResultadosAprendizaje> resultadosDeAprendizaje;
-
+    @ManyToOne
     private Modalidad modalidad;
-
+    @ManyToOne
     private AreaDisciplinaria areaDisciplinaria;
-
+    @ManyToMany
     private List<Enfasis> enfasis;
-
+    @ManyToOne
     private PlanEstudio planEstudio;
-
+    @ManyToMany
     private List<UnidadAcademica> unidadesAcademicasPropietarias;
 
     public Curso() {
