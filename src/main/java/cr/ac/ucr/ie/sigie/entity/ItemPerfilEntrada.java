@@ -19,7 +19,7 @@ public class ItemPerfilEntrada {
     private PlanEstudio planEstudio;
 
     @OneToMany(cascade = CascadeType.ALL,
-               mappedBy = "itemPerfilEntrada", orphanRemoval = true)
+            mappedBy = "itemPerfilEntrada", orphanRemoval = true)
     private List<TipoPerfilEntrada> tiposPerfilEntrada;
 
     public ItemPerfilEntrada() {

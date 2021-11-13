@@ -10,9 +10,9 @@ public class SubContenido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idSubContenido;
-    @Column(name="subTema", unique = false,length = 256, nullable = false)
+    @Column(name = "subTema", unique = false, length = 256, nullable = false)
     private String subTema;
-    @Column(name="ordenSubContenido", unique = false,nullable = false)
+    @Column(name = "ordenSubContenido", unique = false, nullable = false)
     private int ordenSubContenido;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idContenido")

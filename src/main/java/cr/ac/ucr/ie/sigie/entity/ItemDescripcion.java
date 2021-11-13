@@ -1,4 +1,5 @@
 package cr.ac.ucr.ie.sigie.entity;
+
 import javax.persistence.*;
 
 
@@ -9,7 +10,7 @@ public class ItemDescripcion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDescripcion;
 
-    @Column(name="ordenDescripcion", unique = false, nullable = false)
+    @Column(name = "ordenDescripcion", unique = false, nullable = false)
     private int ordenDescripcion;
 
     @Column(name = "detalleDescripcion", unique = false, length = 512, nullable = false)
