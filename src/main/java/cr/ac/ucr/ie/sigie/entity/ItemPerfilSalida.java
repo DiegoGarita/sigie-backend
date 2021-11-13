@@ -10,10 +10,16 @@ public class ItemPerfilSalida {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTipoPerfilSalida;
+
+    @Column(name = "descripcion", unique = false, length = 512, nullable = false)
     private String descripcion;
-    @ManyToOne
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idPlanEstudio")
     private PlanEstudio planEstudio;
-    @ManyToOne
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idTipo")
     private TipoPerfilSalida tipoPerfilSalida;
 
     public ItemPerfilSalida() {

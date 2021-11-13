@@ -8,9 +8,15 @@ public class ItemDescripcion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDescripcion;
+
+    @Column(name="ordenDescripcion", unique = false, nullable = false)
     private int ordenDescripcion;
+
+    @Column(name = "detalleDescripcion", unique = false, length = 512, nullable = false)
     private String detalleDescripcion;
-    @ManyToOne
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idCurso")
     private Curso curso;
 
     public ItemDescripcion() {

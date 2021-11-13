@@ -10,10 +10,18 @@ public class Grado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idGrado;
+
+    @Column(name = "nombre", unique = false, length = 50, nullable = false)
     private String nombre;
+
+    @Column(name="totalCreditosMaximo", unique = false, nullable = false)
     private int totalCreditosMaximo;
+
+    @Column(name="totalCreditosMinimo", unique = false, nullable = false)
     private int totalCreditosMinimo;
-    @OneToMany
+
+    @OneToMany(cascade = CascadeType.ALL,
+               mappedBy = "grado", orphanRemoval = true)
     private List<PlanEstudio> planesEstudio;
 
     public Grado() {

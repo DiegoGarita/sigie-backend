@@ -10,10 +10,16 @@ public class ItemPerfilEntrada {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTipoPerfilEntrada;
+
+    @Column(name = "descripcion", unique = false, length = 512, nullable = false)
     private String descripcion;
-    @ManyToOne
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idPlanEstudio")
     private PlanEstudio planEstudio;
-    @OneToMany
+
+    @OneToMany(cascade = CascadeType.ALL,
+               mappedBy = "itemPerfilEntrada", orphanRemoval = true)
     private List<TipoPerfilEntrada> tiposPerfilEntrada;
 
     public ItemPerfilEntrada() {

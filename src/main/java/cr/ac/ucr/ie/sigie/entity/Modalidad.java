@@ -10,8 +10,12 @@ public class Modalidad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idModalidad;
+
+    @Column(name = "tipoModalidad", unique = false, length = 128, nullable = false)
     private String tipoModalidad;
-    @OneToMany
+
+    @OneToMany(cascade = CascadeType.ALL,
+               mappedBy = "modalidad", orphanRemoval = true)
     private List<Curso> cursos;
 
     public Modalidad() {
