@@ -10,6 +10,7 @@ public class ResultadosAprendizaje {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idResultadoAprendizaje;
+    @Column(name="descripcion", unique = false,length = 1024, nullable = false)
     private String descripcion;
 
     public ResultadosAprendizaje() {
