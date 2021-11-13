@@ -10,17 +10,17 @@ public class Enfasis {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idEnfasis;
-    //-------------------------------------------------------------------------
+    
     @Column(name = "descripcion", unique = false, length = 512, nullable = false)
     private String descripcion;
-    //-------------------------------------------------------------------------
+    
     @ManyToMany(fetch=FetchType.EAGER)
     private List<Curso> cursos;
-    //-------------------------------------------------------------------------
+    
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idPlanEstudio")
     private PlanEstudio planEstudio;
-    //-------------------------------------------------------------------------
+    
     public Enfasis() {
         cursos = new ArrayList<>();
         planEstudio = new PlanEstudio();
